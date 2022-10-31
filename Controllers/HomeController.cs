@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using asp.net_trabalho_final.Models;
+using System.Text.Encodings.Web;
 
 namespace asp.net_trabalho_final.Controllers;
 
@@ -21,6 +22,17 @@ public class HomeController : Controller
     public IActionResult Privacy()
     {
         return View();
+    
+    }
+    public IActionResult Movimentos()
+    {
+        return View();
+    }
+    
+    [HttpGet]
+    public String Teste(string Teste)
+    {
+        return HtmlEncoder.Default.Encode($"Teste: {Teste}");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
