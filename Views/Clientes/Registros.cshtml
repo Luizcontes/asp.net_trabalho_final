@@ -1,0 +1,47 @@
+@* @model asp.net_trabalho_final.Models.Movimento *@
+@model IEnumerable<asp.net_trabalho_final.Models.Movimento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Registar</h1>
+<p>
+    <a class="btn btn-primary" asp-action="Movimentos" asp-route-id="id">ADICIONAR MOVIMENTO</a>
+</p>
+<div>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Data)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+
+            </tr>
+        </thead>
+
+        <tbody class="tbody">
+
+
+            @foreach (var item in Model){ 
+                <tr class="table_row">
+
+                    <td class="first_data">
+                        @Html.DisplayFor(modelItem => item.Data)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Valor)
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>

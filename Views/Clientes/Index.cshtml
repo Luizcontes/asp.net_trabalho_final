@@ -1,0 +1,50 @@
+@model IEnumerable<asp.net_trabalho_final.Models.Cliente>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Clientes</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Adicionar">ADICIONAR</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody class="tbody">
+
+        @foreach (var item in Model)
+        {
+            <tr class="table_row">
+                <td class="first_data">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+
+                <td style="text-align: right;">
+                    <a class="btn btn-success mx-" asp-action="Atualizar" asp-route-id="@item.Id">Atualizar</a>
+                    <a class="btn btn-primary mx-1" asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a>
+                    <a class="btn btn-danger mx-1" asp-action="Eliminar" asp-route-id="@item.Id">Eliminar</a>
+                    <a class="btn btn-secondary me-2" asp-action="Registros" asp-route-id="@item.Id">Movimentos</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

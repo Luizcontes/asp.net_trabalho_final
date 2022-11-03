@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using asp.net_trabalho_final.Models;
 
@@ -10,9 +11,10 @@ using asp.net_trabalho_final.Models;
 namespace asp.net_trabalho_final.Migrations
 {
     [DbContext(typeof(MyLocalDbContext))]
-    partial class MyLocalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221031093930_DbVersion1")]
+    partial class DbVersion1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

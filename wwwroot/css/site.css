@@ -16,3 +16,14 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.tbody tr {
+  vertical-align: middle;
+}
+
+.tbody tr:nth-child(even) {
+  background-color: #ccc;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
